@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniShop | Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <!-- Header for blog.html: navigation bar and main menu for the journal and articles section -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <span>Mini</span>Shop
+            </a>
+
+            <nav>
+                <button class="mobile-menu-btn" aria-label="Toggle menu" id="mobile-menu-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li>
+                        <a href="cart.html" class="cart-icon-wrapper">
+                            Cart
+                            <span class="cart-badge" id="cart-badge">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- The main blog container where I showcase articles. I designed this using CSS Grid for a clean masonry-style look on larger screens. -->
+    <main>
+        <section class="hero" style="padding: 4rem 0; text-align: center;">
+            <div class="container">
+                <h1 style="font-size: 3rem; margin-bottom: 1rem; color: var(--text-main);">MiniShop Journal</h1>
+                <p style="color: var(--text-muted); font-size: 1.125rem; max-width: 600px; margin: 0 auto;">Dive into my
+                    personal insights, project updates, and fresh perspectives on modern lifestyle trends.</p>
+            </div>
+        </section>
+
+        <section class="container" style="margin: var(--spacing-xl) auto;">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--spacing-lg);">
+
+                <!-- Blog Post 1 -->
+                <article
+                    style="border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface);">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=500&q=80"
+                        alt="Fashion Trends" style="width: 100%; height: 220px; object-fit: cover;">
+                    <div style="padding: var(--spacing-lg);">
+                        <span
+                            style="background: var(--bg-color); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600;">FASHION</span>
+                        <h2 style="margin: 1rem 0 0.5rem; font-size: 1.5rem;">Top 10 Fashion Trends for 2026</h2>
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">I've been looking into how
+                            sustainability is completely shifting what we wear. From upcycled materials making a
+                            comeback to minimalist capsules taking over, here's my take on the new aesthetic.</p>
+                        <p style="font-size: 0.875rem; color: var(--text-muted);">By Liam Harrison • October 12, 2025
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article
+                    style="border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface);">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGlmZXN0eWxlfGVufDB8fDB8fHww"
+                        alt="Wardrobe" style="width: 100%; height: 220px; object-fit: cover;">
+                    <div style="padding: var(--spacing-lg);">
+                        <span
+                            style="background: var(--bg-color); color: var(--secondary); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600;">LIFESTYLE</span>
+                        <h2 style="margin: 1rem 0 0.5rem; font-size: 1.5rem;">Building a Minimalist Wardrobe</h2>
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">Ever open your wardrobe and feel
+                            overwhelmed? I tried stripping my clothes down to just 30 essential pieces, and it
+                            practically changed my morning routine. Here is what I learned.</p>
+                        <p style="font-size: 0.875rem; color: var(--text-muted);">By Chloe Bennett • September 28, 2025
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article
+                    style="border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface);">
+                    <img src="https://images.unsplash.com/photo-1648737966636-2fc3a5fffc8a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxzZWFyY2h8MXx8dGVjaG5vbG9neXxlbnwwfHwwfHx8MA%3D%3D"
+                        alt="Tech Gadgets" style="width: 100%; height: 220px; object-fit: cover;">
+                    <div style="padding: var(--spacing-lg);">
+                        <span
+                            style="background: var(--bg-color); color: var(--text-main); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600;">TECHNOLOGY</span>
+                        <h2 style="margin: 1rem 0 0.5rem; font-size: 1.5rem;">Must-Have Tech Accessories</h2>
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">As a developer, my desk is always
+                            cluttered with cables and chargers. I finally found some sleek desk accessories that
+                            actually look good next to my laptop. Check them out!</p>
+                        <p style="font-size: 0.875rem; color: var(--text-muted);">By Marcus Cole • September 15, 2025
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Consistent, responsive site footer giving users extra navigation options at the bottom of the blog -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>MiniShop</h4>
+                    <p>Stay updated with our latest thoughts, fashion tips, and technology reviews on the MiniShop blog.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="products.html">Shop Products</a></p>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="login.html">Login</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: support@minishop.com</p>
+                    <p>Phone: +1 234 567 8900</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MiniShop Application. Created by a student developer.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniShop | Products</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+    <script src="js/cart.js" defer></script>
+</head>
+
+<body>
+    <!-- Header for products.html: navigation bar and main menu for the store catalog page -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <span>Mini</span>Shop
+            </a>
+
+            <nav>
+                <button class="mobile-menu-btn" aria-label="Toggle menu" id="mobile-menu-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li>
+                        <a href="cart.html" class="cart-icon-wrapper">
+                            Cart
+                            <span class="cart-badge" id="cart-badge">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- The products catalog grid where I used DOM data attributes to implement category filtering -->
+    <main>
+        <section class="container">
+            <h1 class="section-title">All Products</h1>
+
+            <div class="category-filters" id="category-filters">
+                <button class="btn btn-secondary filter-btn active" data-filter="all">All</button>
+                <button class="btn btn-secondary filter-btn" data-filter="clothing">Clothing</button>
+                <button class="btn btn-secondary filter-btn" data-filter="footwear">Footwear</button>
+                <button class="btn btn-secondary filter-btn" data-filter="electronics">Electronics</button>
+                <button class="btn btn-secondary filter-btn" data-filter="accessories">Accessories</button>
+            </div>
+
+            <div id="product-alerts"></div>
+
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <article class="product-card" data-category="clothing">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&q=80"
+                        alt="Premium T-Shirt" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Organic Cloud-Weave Tee</h3>
+                        <p class="product-price">$29.99</p>
+                        <button class="btn btn-primary add-to-cart-btn" data-id="1" data-title="Organic Cloud-Weave Tee"
+                            data-price="29.99"
+                            data-img="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&q=80">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="product-card" data-category="footwear">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80" alt="Running Shoes"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Velocity Sprint Kicks</h3>
+                        <p class="product-price">$120.00</p>
+                        <button class="btn btn-primary add-to-cart-btn" data-id="2" data-title="Velocity Sprint Kicks"
+                            data-price="120.00"
+                            data-img="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="product-card" data-category="electronics">
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.GNTmAnspyHRf8Ux1NQnl_QHaNK?rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="Smart Watch" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Genesis Smart Watch</h3>
+                        <p class="product-price">$199.99</p>
+                        <button class="btn btn-primary add-to-cart-btn" data-id="3" data-title="Genesis Smart Watch"
+                            data-price="199.99"
+                            data-img="https://tse1.mm.bing.net/th/id/OIP.GNTmAnspyHRf8Ux1NQnl_QHaNK?rs=1&pid=ImgDetMain&o=7&rm=3">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Product 4 -->
+                <article class="product-card" data-category="electronics">
+                    <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D"
+                        alt="Wireless Headphones" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Aura Silence Over-Ears</h3>
+                        <p class="product-price">$149.00</p>
+                        <button class="btn btn-primary add-to-cart-btn" data-id="4" data-title="Aura Silence Over-Ears"
+                            data-price="149.00"
+                            data-img="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Product 5 -->
+                <article class="product-card" data-category="accessories">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80"
+                        alt="Smart Watch Black" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Minimalist Watch</h3>
+                        <p class="product-price">$89.00</p>
+                        <button class="btn btn-primary add-to-cart-btn" data-id="5" data-title="Minimalist Watch"
+                            data-price="89.00"
+                            data-img="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Product 6 -->
+                <article class="product-card" data-category="accessories">
+                    <img src="https://images.unsplash.com/photo-1627384113743-6bd5a479fffd?w=500&q=80" alt="Leather Bag"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Classic Leather Bag</h3>
+                        <p class="product-price">$95.50</p>
+                        <button class="btn btn-primary add-to-cart-btn" data-id="6" data-title="Classic Leather Bag"
+                            data-price="95.50"
+                            data-img="https://images.unsplash.com/photo-1627384113743-6bd5a479fffd?w=500&q=80">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Product 7 -->
+                <article class="product-card" data-category="clothing">
+                    <img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500&q=80"
+                        alt="Denim Jacket" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Heritage Indigo Trucker</h3>
+                        <p class="product-price">$85.00</p>
+                        <button class="btn btn-primary add-to-cart-btn" data-id="7" data-title="Heritage Indigo Trucker"
+                            data-price="85.00"
+                            data-img="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500&q=80">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Product 8 -->
+                <article class="product-card" data-category="accessories">
+                    <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&q=80" alt="Sunglasses"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Retro Sunglasses</h3>
+                        <p class="product-price">$45.00</p>
+                        <button class="btn btn-primary add-to-cart-btn" data-id="8" data-title="Retro Sunglasses"
+                            data-price="45.00"
+                            data-img="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&q=80">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Product 9 -->
+                <article class="product-card" data-category="electronics">
+                    <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500&q=80"
+                        alt="Wireless Mouse" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Ergonomic Wireless Mouse</h3>
+                        <p class="product-price">$35.99</p>
+                        <button class="btn btn-primary add-to-cart-btn" data-id="9"
+                            data-title="Ergonomic Wireless Mouse" data-price="35.99"
+                            data-img="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500&q=80">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Product 10 -->
+                <article class="product-card" data-category="footwear">
+                    <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500&q=80"
+                        alt="Oxford Shoes" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Regal Leather Oxfords</h3>
+                        <p class="product-price">$110.00</p>
+                        <button class="btn btn-primary add-to-cart-btn" data-id="10" data-title="Regal Leather Oxfords"
+                            data-price="110.00"
+                            data-img="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500&q=80">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Product 11 -->
+                <article class="product-card" data-category="clothing">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&q=80"
+                        alt="Summer Dress" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Floral Summer Dress</h3>
+                        <p class="product-price">$55.00</p>
+                        <button class="btn btn-primary add-to-cart-btn" data-id="11" data-title="Floral Summer Dress"
+                            data-price="55.00"
+                            data-img="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&q=80">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Product 12 -->
+                <article class="product-card" data-category="accessories">
+                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500&q=80"
+                        alt="Smartwatch Band" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Leather Watch Band</h3>
+                        <p class="product-price">$25.50</p>
+                        <button class="btn btn-primary add-to-cart-btn" data-id="12" data-title="Leather Watch Band"
+                            data-price="25.50"
+                            data-img="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500&q=80">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+                <!-- Products 13-50 generated to scale catalog -->
+                <article class="product-card" data-category="clothing"> <img
+                        src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&q=80" alt="Hoodie"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Comfort Hoodie</h3>
+                        <p class="product-price">$45.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="13"
+                            data-title="Comfort Hoodie" data-price="45.00"
+                            data-img="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="footwear"> <img
+                        src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&q=80" alt="Shoes"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Everyday Sneakers</h3>
+                        <p class="product-price">$65.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="14"
+                            data-title="Everyday Sneakers" data-price="65.00"
+                            data-img="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="electronics"> <img
+                        src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=500&q=80" alt="Keyboard"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Mechanical Keyboard</h3>
+                        <p class="product-price">$129.00</p> <button class="btn btn-primary add-to-cart-btn"
+                            data-id="15" data-title="Mechanical Keyboard" data-price="129.00"
+                            data-img="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="accessories"> <img
+                        src="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=500&q=80" alt="Watch"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Silver Watch</h3>
+                        <p class="product-price">$180.00</p> <button class="btn btn-primary add-to-cart-btn"
+                            data-id="16" data-title="Silver Watch" data-price="180.00"
+                            data-img="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="clothing"> <img
+                        src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=500&q=80" alt="Dress"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Evening Dress</h3>
+                        <p class="product-price">$89.99</p> <button class="btn btn-primary add-to-cart-btn" data-id="17"
+                            data-title="Evening Dress" data-price="89.99"
+                            data-img="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="footwear"> <img
+                        src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500&q=80" alt="Boots"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Winter Boots</h3>
+                        <p class="product-price">$140.00</p> <button class="btn btn-primary add-to-cart-btn"
+                            data-id="18" data-title="Winter Boots" data-price="140.00"
+                            data-img="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="electronics"> <img
+                        src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80" alt="Headphones"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Studio Headphones</h3>
+                        <p class="product-price">$199.99</p> <button class="btn btn-primary add-to-cart-btn"
+                            data-id="19" data-title="Studio Headphones" data-price="199.99"
+                            data-img="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="accessories"> <img
+                        src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&q=80" alt="Bag"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Travel Backpack</h3>
+                        <p class="product-price">$75.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="20"
+                            data-title="Travel Backpack" data-price="75.00"
+                            data-img="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="clothing"> <img
+                        src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500&q=80" alt="Jacket"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Bomber Jacket</h3>
+                        <p class="product-price">$110.00</p> <button class="btn btn-primary add-to-cart-btn"
+                            data-id="21" data-title="Bomber Jacket" data-price="110.00"
+                            data-img="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="footwear"> <img
+                        src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500&q=80" alt="Sandals"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Summer Sandals</h3>
+                        <p class="product-price">$35.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="22"
+                            data-title="Summer Sandals" data-price="35.00"
+                            data-img="https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="electronics"> <img
+                        src="https://images.unsplash.com/photo-1622434641406-a158123450f9?w=500&q=80" alt="Watch"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Fitness Tracker</h3>
+                        <p class="product-price">$49.99</p> <button class="btn btn-primary add-to-cart-btn" data-id="23"
+                            data-title="Fitness Tracker" data-price="49.99"
+                            data-img="https://images.unsplash.com/photo-1622434641406-a158123450f9?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="accessories"> <img
+                        src="https://images.unsplash.com/photo-1601593346740-925612772716?w=500&q=80" alt="Case"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Armored Matte Defender Case</h3>
+                        <p class="product-price">$19.99</p> <button class="btn btn-primary add-to-cart-btn" data-id="24"
+                            data-title="Armored Matte Defender Case" data-price="19.99"
+                            data-img="https://images.unsplash.com/photo-1601593346740-925612772716?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="clothing"> <img
+                        src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=500&q=80" alt="T-Shirt"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Urban Art Graphic Tee</h3>
+                        <p class="product-price">$24.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="25"
+                            data-title="Urban Art Graphic Tee" data-price="24.00"
+                            data-img="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="footwear"> <img
+                        src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&q=80" alt="Shoes"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Skate Shoes</h3>
+                        <p class="product-price">$60.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="26"
+                            data-title="Skate Shoes" data-price="60.00"
+                            data-img="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="electronics"> <img
+                        src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500&q=80" alt="Speaker"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Bluetooth Speaker</h3>
+                        <p class="product-price">$39.99</p> <button class="btn btn-primary add-to-cart-btn" data-id="27"
+                            data-title="Bluetooth Speaker" data-price="39.99"
+                            data-img="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="accessories"> <img
+                        src="https://images.unsplash.com/photo-1627123424574-724758594e93?w=500&q=80" alt="Wallet"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Leather Wallet</h3>
+                        <p class="product-price">$45.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="28"
+                            data-title="Leather Wallet" data-price="45.00"
+                            data-img="https://images.unsplash.com/photo-1627123424574-724758594e93?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="clothing"> <img
+                        src="https://images.unsplash.com/photo-1611619668823-13e82692eddc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGZvcm1hbCUyMHNoaXJ0fGVufDB8fDB8fHww"
+                        alt="Shirt" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Formal Shirt</h3>
+                        <p class="product-price">$55.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="29"
+                            data-title="Formal Shirt" data-price="55.00"
+                            data-img="https://images.unsplash.com/photo-1611619668823-13e82692eddc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGZvcm1hbCUyMHNoaXJ0fGVufDB8fDB8fHww">Add
+                            to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="footwear"> <img
+                        src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=500&q=80" alt="Shoes"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Running Shoes Pro</h3>
+                        <p class="product-price">$135.00</p> <button class="btn btn-primary add-to-cart-btn"
+                            data-id="30" data-title="Running Shoes Pro" data-price="135.00"
+                            data-img="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="electronics"> <img
+                        src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500&q=80" alt="Earbuds"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Wireless Earbuds</h3>
+                        <p class="product-price">$79.99</p> <button class="btn btn-primary add-to-cart-btn" data-id="31"
+                            data-title="Wireless Earbuds" data-price="79.99"
+                            data-img="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="accessories"> <img
+                        src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&q=80" alt="Belt"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Artisan Crafted Leather Belt</h3>
+                        <p class="product-price">$29.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="32"
+                            data-title="Artisan Crafted Leather Belt" data-price="29.00"
+                            data-img="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="clothing"> <img
+                        src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=500&q=80" alt="Sweater"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Knit Sweater</h3>
+                        <p class="product-price">$65.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="33"
+                            data-title="Knit Sweater" data-price="65.00"
+                            data-img="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="footwear"> <img
+                        src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&q=80" alt="Heels"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Elegant Heels</h3>
+                        <p class="product-price">$90.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="34"
+                            data-title="Elegant Heels" data-price="90.00"
+                            data-img="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="electronics"> <img
+                        src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500&q=80" alt="Tablet"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Mini Tablet</h3>
+                        <p class="product-price">$299.00</p> <button class="btn btn-primary add-to-cart-btn"
+                            data-id="35" data-title="Mini Tablet" data-price="299.00"
+                            data-img="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="accessories"> <img
+                        src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&q=80" alt="Bag"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Crossbody Bag</h3>
+                        <p class="product-price">$55.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="36"
+                            data-title="Crossbody Bag" data-price="55.00"
+                            data-img="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="clothing"> <img
+                        src="https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=500&q=80" alt="Pants"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Cargo Pants</h3>
+                        <p class="product-price">$48.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="37"
+                            data-title="Cargo Pants" data-price="48.00"
+                            data-img="https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="footwear"> <img
+                        src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500&q=80" alt="Sneakers"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">High-top Sneakers</h3>
+                        <p class="product-price">$80.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="38"
+                            data-title="High-top Sneakers" data-price="80.00"
+                            data-img="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="electronics"> <img
+                        src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&q=80" alt="Laptop"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Pro Laptop</h3>
+                        <p class="product-price">$1299.00</p> <button class="btn btn-primary add-to-cart-btn"
+                            data-id="39" data-title="Pro Laptop" data-price="1299.00"
+                            data-img="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="accessories"> <img
+                        src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80" alt="Hat"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Beanie Hat</h3>
+                        <p class="product-price">$20.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="40"
+                            data-title="Beanie Hat" data-price="20.00"
+                            data-img="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="clothing"> <img
+                        src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500&q=80" alt="Coat"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Trench Coat</h3>
+                        <p class="product-price">$150.00</p> <button class="btn btn-primary add-to-cart-btn"
+                            data-id="41" data-title="Trench Coat" data-price="150.00"
+                            data-img="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="footwear"> <img
+                        src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&q=80" alt="Shoes"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Slip-on Sneakers</h3>
+                        <p class="product-price">$55.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="42"
+                            data-title="Slip-on Sneakers" data-price="55.00"
+                            data-img="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="electronics"> <img
+                        src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&q=80" alt="Camera"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Action Camera</h3>
+                        <p class="product-price">$250.00</p> <button class="btn btn-primary add-to-cart-btn"
+                            data-id="43" data-title="Action Camera" data-price="250.00"
+                            data-img="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="accessories"> <img
+                        src="https://images.unsplash.com/photo-1588600878108-578307a3cc9d?w=500&q=80" alt="Necklace"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Gold Necklace</h3>
+                        <p class="product-price">$120.00</p> <button class="btn btn-primary add-to-cart-btn"
+                            data-id="44" data-title="Gold Necklace" data-price="120.00"
+                            data-img="https://images.unsplash.com/photo-1588600878108-578307a3cc9d?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="clothing"> <img
+                        src="https://media.istockphoto.com/id/1068705632/photo/blue-jeans-fashion.webp?a=1&b=1&s=612x612&w=0&k=20&c=p8HUk6pZjQDPOMx9Xddzdp3J8QpP21e5y4h5Z7_4Wiw="
+                        alt="Shorts" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Denim Shorts</h3>
+                        <p class="product-price">$35.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="45"
+                            data-title="Denim Shorts" data-price="35.00"
+                            data-img="https://media.istockphoto.com/id/1068705632/photo/blue-jeans-fashion.webp?a=1&b=1&s=612x612&w=0&k=20&c=p8HUk6pZjQDPOMx9Xddzdp3J8QpP21e5y4h5Z7_4Wiw=">Add
+                            to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="footwear"> <img
+                        src="https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=500&q=80" alt="Boots"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Chelsea Boots</h3>
+                        <p class="product-price">$125.00</p> <button class="btn btn-primary add-to-cart-btn"
+                            data-id="46" data-title="Chelsea Boots" data-price="125.00"
+                            data-img="https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="electronics"> <img
+                        src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=500&q=80" alt="TV"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">4K Smart TV</h3>
+                        <p class="product-price">$599.00</p> <button class="btn btn-primary add-to-cart-btn"
+                            data-id="47" data-title="4K Smart TV" data-price="599.00"
+                            data-img="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="accessories"> <img
+                        src="https://images.unsplash.com/photo-1589674781759-c21c37956a44?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2lsdmVyJTIwcmluZ3xlbnwwfHwwfHx8MA%3D%3D"
+                        alt="Ring" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Silver Ring</h3>
+                        <p class="product-price">$40.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="48"
+                            data-title="Silver Ring" data-price="40.00"
+                            data-img="https://images.unsplash.com/photo-1589674781759-c21c37956a44?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2lsdmVyJTIwcmluZ3xlbnwwfHwwfHx8MA%3D%3D">Add
+                            to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="clothing"> <img
+                        src="https://images.unsplash.com/photo-1550639525-c97d455acf70?w=500&q=80" alt="Dress"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Maxi Dress</h3>
+                        <p class="product-price">$70.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="49"
+                            data-title="Maxi Dress" data-price="70.00"
+                            data-img="https://images.unsplash.com/photo-1550639525-c97d455acf70?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+                <article class="product-card" data-category="footwear"> <img
+                        src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&q=80" alt="Shoes"
+                        class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Workout Shoes</h3>
+                        <p class="product-price">$85.00</p> <button class="btn btn-primary add-to-cart-btn" data-id="50"
+                            data-title="Workout Shoes" data-price="85.00"
+                            data-img="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&q=80">Add to
+                            Cart</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- The main footer structure providing site-wide links and contact information -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>MiniShop</h4>
+                    <p>Find your next favorite item inside our extensive mock catalog of everyday goods.</p>
+                </div>
+                <!-- same footer content -->
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="products.html">Shop Products</a></p>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="login.html">Login</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: support@minishop.com</p>
+                    <p>Phone: +1 234 567 8900</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MiniShop Application. Developed for CMP7246 assessment.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
