@@ -5,10 +5,7 @@ require('dotenv').config();
 
 const app = express();
 app.use(express.json());
-app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:3000', process.env.FRONTEND_URL].filter(Boolean),
-  credentials: true
-}));
+app.use(cors()); // Allow all for easy initial deployment verification
 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('MiniShop MongoDB connected'))
